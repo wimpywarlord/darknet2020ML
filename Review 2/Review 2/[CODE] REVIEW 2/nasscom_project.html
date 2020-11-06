@@ -13077,13 +13077,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Gradient-Boosting-Classifier-on-DARKNET-2020:-A-Project-Report">Gradient Boosting Classifier on DARKNET 2020: A Project Report<a class="anchor-link" href="#Gradient-Boosting-Classifier-on-DARKNET-2020:-A-Project-Report">&#182;</a></h1>
+<h1 id="AdaBoost-Classifier-on-DARKNET-2020:-A-Project-Report">AdaBoost Classifier on DARKNET 2020: A Project Report<a class="anchor-link" href="#AdaBoost-Classifier-on-DARKNET-2020:-A-Project-Report">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#importing python libraries</span>
@@ -13096,9 +13096,16 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Loading-the-Dataset">Loading the Dataset<a class="anchor-link" href="#Loading-the-Dataset">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Reading the dataset: Darknet 2020</span>
@@ -13128,7 +13135,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[81]:</div>
 
 
 
@@ -13429,7 +13436,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#A look at all the 85 columns of the dataset</span>
@@ -13446,7 +13453,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[82]:</div>
 
 
 
@@ -13488,7 +13495,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Getting all the columns with total number of entries in each column and data type</span>
@@ -13609,9 +13616,16 @@ memory usage: 91.8+ MB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Analysing-Coorelation-to-remove-uselss-coloumns">Analysing Coorelation to remove uselss coloumns<a class="anchor-link" href="#Analysing-Coorelation-to-remove-uselss-coloumns">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Correlation matrix to know the dependency of columns on each other</span>
@@ -13629,7 +13643,7 @@ memory usage: 91.8+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[84]:</div>
 
 
 
@@ -13808,9 +13822,16 @@ memory usage: 91.8+ MB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="DATA-CLEANING-BEGINS">DATA CLEANING BEGINS<a class="anchor-link" href="#DATA-CLEANING-BEGINS">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span> <span class="c1">#dropping null values</span>
@@ -13826,7 +13847,7 @@ memory usage: 91.8+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[85]:</div>
 
 
 
@@ -14151,7 +14172,7 @@ memory usage: 91.8+ MB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1">#to check the number of null values in each column</span>
@@ -14167,7 +14188,7 @@ memory usage: 91.8+ MB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -14189,7 +14210,7 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1">#to check the number of classes in Label</span>
@@ -14205,7 +14226,7 @@ dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[87]:</div>
 
 
 
@@ -14226,7 +14247,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Label.1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span> <span class="c1">#to check the number of classes in Label</span>
@@ -14242,7 +14263,7 @@ Name: Label, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[88]:</div>
 
 
 
@@ -14283,7 +14304,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#splitting the Src IP into octets,getting first two ocets</span>
@@ -14305,7 +14326,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">newIP</span><span class="p">)</span>  <span class="c1">#a new dataframe with the above obtained series</span>
@@ -14322,7 +14343,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[15]:</div>
+    <div class="prompt output_prompt">Out[90]:</div>
 
 
 
@@ -14382,7 +14403,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Src IP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span>  <span class="c1">#replacing column Src IP with df1</span>
@@ -14399,7 +14420,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[91]:</div>
 
 
 
@@ -14580,7 +14601,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">newIP1</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#splitting the Dst IP into octets,getting first two ocets</span>
@@ -14600,7 +14621,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">newIP1</span><span class="p">)</span>
@@ -14617,7 +14638,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[18]:</div>
+    <div class="prompt output_prompt">Out[93]:</div>
 
 
 
@@ -14677,7 +14698,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dst IP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df2</span>
@@ -14694,7 +14715,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[19]:</div>
+    <div class="prompt output_prompt">Out[94]:</div>
 
 
 
@@ -14873,9 +14894,16 @@ Name: Label.1, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="ENCODING-THE-LABELS">ENCODING THE LABELS<a class="anchor-link" href="#ENCODING-THE-LABELS">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># label encoding the data : Label and Label.1</span>
@@ -14894,7 +14922,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14910,7 +14938,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[96]:</div>
 
 
 
@@ -15089,9 +15117,16 @@ Name: Label.1, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="MORE-CLEANING">MORE CLEANING<a class="anchor-link" href="#MORE-CLEANING">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Flow ID&#39;</span><span class="p">,</span><span class="s1">&#39;Timestamp&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#dropping the unnecessary columns</span>
@@ -15108,7 +15143,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[97]:</div>
 
 
 
@@ -15297,7 +15332,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Idle Mean&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Idle Mean&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">1e15</span>
@@ -15310,7 +15345,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Idle Max&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Idle Max&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">1e15</span>
@@ -15323,7 +15358,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Idle Min&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Idle Min&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">1e15</span>
@@ -15336,7 +15371,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Idle Std&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Idle Std&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">1e7</span>
@@ -15349,7 +15384,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -15365,7 +15400,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[27]:</div>
+    <div class="prompt output_prompt">Out[102]:</div>
 
 
 
@@ -15546,7 +15581,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> 
@@ -15562,7 +15597,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[28]:</div>
+    <div class="prompt output_prompt">Out[103]:</div>
 
 
 
@@ -15579,7 +15614,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df5</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#filling null values with the mean of the column</span>
@@ -15595,7 +15630,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[29]:</div>
+    <div class="prompt output_prompt">Out[104]:</div>
 
 
 
@@ -15776,7 +15811,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="c1">#this shows there are no more null values</span>
@@ -15792,7 +15827,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[30]:</div>
+    <div class="prompt output_prompt">Out[105]:</div>
 
 
 
@@ -15809,7 +15844,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="o">=</span><span class="n">df5</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
@@ -15822,7 +15857,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Replacing infinite with nan </span>
@@ -15839,7 +15874,7 @@ Name: Label.1, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -15855,7 +15890,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[33]:</div>
+    <div class="prompt output_prompt">Out[108]:</div>
 
 
 
@@ -16034,9 +16069,16 @@ Name: Label.1, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SAMPLING-BEGINS">SAMPLING BEGINS<a class="anchor-link" href="#SAMPLING-BEGINS">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -16052,7 +16094,7 @@ Name: Label.1, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[34]:</div>
+    <div class="prompt output_prompt">Out[109]:</div>
 
 
 
@@ -16083,7 +16125,7 @@ oversample class 3.0 wrt class 2.0</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#1. Find the number of the minority class</span>
@@ -16126,7 +16168,7 @@ oversample class 3.0 wrt class 2.0</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">index_non_tor</span> <span class="o">=</span> <span class="n">df5</span><span class="p">[</span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
@@ -16140,9 +16182,16 @@ oversample class 3.0 wrt class 2.0</p>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="DOING-BOTH-UNDER-AND-OVER-SAMPLING-TO-EQUATE-ALL-4-CLASSES">DOING BOTH UNDER AND OVER SAMPLING TO EQUATE ALL 4 CLASSES<a class="anchor-link" href="#DOING-BOTH-UNDER-AND-OVER-SAMPLING-TO-EQUATE-ALL-4-CLASSES">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#4. Randomly sample the majority indices with respect to the number of minority classes</span>
@@ -16156,7 +16205,7 @@ oversample class 3.0 wrt class 2.0</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#5. Concat the minority indices with the indices from step 4</span>
@@ -16170,7 +16219,7 @@ oversample class 3.0 wrt class 2.0</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Get the balanced dataframe - This is the final undersampled data</span>
@@ -16188,7 +16237,7 @@ oversample class 3.0 wrt class 2.0</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[114]:</div>
 
 
 
@@ -16369,7 +16418,7 @@ oversample class 3.0 wrt class 2.0</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">under_sample_df</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -16385,14 +16434,14 @@ oversample class 3.0 wrt class 2.0</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[40]:</div>
+    <div class="prompt output_prompt">Out[115]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0    23846
-1.0    23827
+<pre>0.0    23847
+1.0    23826
 2.0       49
 Name: Label, dtype: int64</pre>
 </div>
@@ -16405,7 +16454,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">vpn_sample</span> <span class="o">=</span> <span class="n">df5</span><span class="p">[</span><span class="n">df5</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span><span class="o">==</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">tor</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -16418,7 +16467,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#create a new dataframe containing only tor data</span>
@@ -16432,7 +16481,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">over_sample_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">vpn_sample</span><span class="p">,</span><span class="n">df_tor</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -16445,7 +16494,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">over_sample_class_counts</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">over_sample_df</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">])</span>
@@ -16458,7 +16507,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">over_sample_class_counts</span>
@@ -16474,7 +16523,7 @@ Name: Label, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[45]:</div>
+    <div class="prompt output_prompt">Out[120]:</div>
 
 
 
@@ -16493,7 +16542,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">balance_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">under_sample_df</span><span class="p">,</span><span class="n">over_sample_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -16504,9 +16553,16 @@ Name: Label, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="ALL-CLASSES-BALANCED">ALL CLASSES BALANCED<a class="anchor-link" href="#ALL-CLASSES-BALANCED">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">balance_df</span><span class="p">[</span><span class="s1">&#39;Label&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -16522,14 +16578,14 @@ Name: Label, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[122]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.0    23846
-1.0    23827
+<pre>0.0    23847
+1.0    23826
 2.0    22968
 3.0    22919
 Name: Label, dtype: int64</pre>
@@ -16543,7 +16599,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">balance_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16559,7 +16615,7 @@ Name: Label, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[48]:</div>
+    <div class="prompt output_prompt">Out[123]:</div>
 
 
 
@@ -16738,9 +16794,16 @@ Name: Label, dtype: int64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="SPERATING-TARGET-VARIABLE">SPERATING TARGET VARIABLE<a class="anchor-link" href="#SPERATING-TARGET-VARIABLE">&#182;</a></h1>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Forming a new dataframe for the target variable and removing it from the above dataset.</span>
@@ -16758,7 +16821,7 @@ Name: Label, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[124]:</div>
 
 
 
@@ -16818,7 +16881,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">balance_df</span> <span class="o">=</span> <span class="n">balance_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -16835,7 +16898,7 @@ Name: Label, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[50]:</div>
+    <div class="prompt output_prompt">Out[125]:</div>
 
 
 
@@ -17016,7 +17079,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#MinMaxScaling</span>
@@ -17041,7 +17104,7 @@ Name: Label, dtype: int64</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[51]:</div>
+    <div class="prompt output_prompt">Out[126]:</div>
 
 
 
@@ -17222,7 +17285,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#DOING THE TRAIN TEST SPLIT</span>
@@ -17258,7 +17321,7 @@ Name: Label, dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span>
@@ -17286,81 +17349,93 @@ Name: Label, dtype: int64</pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
-  1.43776569e+00 8.00000000e+00]
- [1.31202000e+02 5.29660000e+04 2.24000000e+02 ... 0.00000000e+00
-  0.00000000e+00 4.00000000e+00]
- [1.31202000e+02 5.11390000e+04 2.24000000e+02 ... 0.00000000e+00
-  0.00000000e+00 4.00000000e+00]
- ...
- [1.08000000e+01 4.78180000e+04 1.31202000e+02 ... 0.00000000e+00
+<pre>train: [[1.08000000e+01 1.33510000e+04 1.31202000e+02 ... 0.00000000e+00
   0.00000000e+00 1.00000000e+00]
- [1.31202000e+02 6.48850000e+04 2.24000000e+02 ... 0.00000000e+00
-  0.00000000e+00 8.00000000e+00]
- [1.08000000e+01 5.99820000e+04 1.98700000e+02 ... 0.00000000e+00
-  0.00000000e+00 3.00000000e+00]], test: [[1.01520000e+01 3.83740000e+04 1.85310000e+02 ... 1.45625355e+00
-  1.45625353e+00 2.00000000e+00]
- [1.01520000e+01 5.86820000e+04 5.41920000e+01 ... 1.45640750e+00
-  5.14311000e-09 2.00000000e+00]
- [1.31202000e+02 4.91130000e+04 1.29330000e+02 ... 0.00000000e+00
-  0.00000000e+00 9.00000000e+00]
+ [1.01520000e+01 3.58720000e+04 1.95430000e+02 ... 1.45640513e+00
+  1.45640513e+00 2.00000000e+00]
+ [1.73194000e+02 8.00000000e+01 1.01520000e+01 ... 0.00000000e+00
+  0.00000000e+00 2.00000000e+00]
  ...
- [9.61600000e+01 4.43000000e+02 1.08000000e+01 ... 0.00000000e+00
-  0.00000000e+00 9.00000000e+00]
- [1.29550000e+02 0.00000000e+00 9.60000000e-01 ... 1.43257411e+00
-  5.99801440e-08 3.00000000e+00]
- [1.31202000e+02 6.18000000e+03 1.31202000e+02 ... 0.00000000e+00
-  0.00000000e+00 8.00000000e+00]]
-train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
-  1.43776569e+00 8.00000000e+00]
- [1.31202000e+02 5.29660000e+04 2.24000000e+02 ... 0.00000000e+00
-  0.00000000e+00 4.00000000e+00]
- [1.31202000e+02 5.11390000e+04 2.24000000e+02 ... 0.00000000e+00
-  0.00000000e+00 4.00000000e+00]
- ...
- [1.08000000e+01 4.78180000e+04 1.31202000e+02 ... 0.00000000e+00
+ [1.08000000e+01 3.78580000e+04 1.31202000e+02 ... 0.00000000e+00
   0.00000000e+00 1.00000000e+00]
- [1.31202000e+02 6.48850000e+04 2.24000000e+02 ... 0.00000000e+00
-  0.00000000e+00 8.00000000e+00]
- [1.08000000e+01 5.99820000e+04 1.98700000e+02 ... 0.00000000e+00
-  0.00000000e+00 3.00000000e+00]], test: [[1.01520000e+01 3.83740000e+04 1.85310000e+02 ... 1.45625355e+00
-  1.45625353e+00 2.00000000e+00]
- [1.01520000e+01 5.86820000e+04 5.41920000e+01 ... 1.45640750e+00
-  5.14311000e-09 2.00000000e+00]
- [1.31202000e+02 4.91130000e+04 1.29330000e+02 ... 0.00000000e+00
-  0.00000000e+00 9.00000000e+00]
- ...
- [9.61600000e+01 4.43000000e+02 1.08000000e+01 ... 0.00000000e+00
-  0.00000000e+00 9.00000000e+00]
- [1.29550000e+02 0.00000000e+00 9.60000000e-01 ... 1.43257411e+00
-  5.99801440e-08 3.00000000e+00]
- [1.31202000e+02 6.18000000e+03 1.31202000e+02 ... 0.00000000e+00
-  0.00000000e+00 8.00000000e+00]]
-train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
-  1.43776569e+00 8.00000000e+00]
- [1.31202000e+02 5.29660000e+04 2.24000000e+02 ... 0.00000000e+00
+ [1.08000000e+01 5.37560000e+04 2.16580000e+02 ... 1.42904493e+00
+  1.42904487e+00 1.00000000e+00]
+ [1.08000000e+01 5.83090000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+00]], test: [[1.31202000e+02 6.03730000e+04 2.24000000e+02 ... 0.00000000e+00
+  0.00000000e+00 3.00000000e+00]
+ [1.08000000e+01 1.05730000e+04 1.98700000e+02 ... 0.00000000e+00
   0.00000000e+00 4.00000000e+00]
- [1.31202000e+02 5.11390000e+04 2.24000000e+02 ... 0.00000000e+00
-  0.00000000e+00 4.00000000e+00]
+ [1.31202000e+02 5.04150000e+04 2.24000000e+02 ... 0.00000000e+00
+  0.00000000e+00 3.00000000e+00]
  ...
- [1.08000000e+01 4.78180000e+04 1.31202000e+02 ... 0.00000000e+00
+ [1.31202000e+02 4.45270000e+04 7.41250000e+01 ... 0.00000000e+00
+  0.00000000e+00 9.00000000e+00]
+ [1.00000000e+01 5.44530000e+04 1.95154000e+02 ... 1.45633078e+00
+  1.45633066e+00 1.00000000e+00]
+ [1.31202000e+02 4.97630000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+01]]
+train: [[1.08000000e+01 1.33510000e+04 1.31202000e+02 ... 0.00000000e+00
   0.00000000e+00 1.00000000e+00]
- [1.31202000e+02 6.48850000e+04 2.24000000e+02 ... 0.00000000e+00
-  0.00000000e+00 8.00000000e+00]
- [1.08000000e+01 5.99820000e+04 1.98700000e+02 ... 0.00000000e+00
-  0.00000000e+00 3.00000000e+00]], test: [[1.01520000e+01 3.83740000e+04 1.85310000e+02 ... 1.45625355e+00
-  1.45625353e+00 2.00000000e+00]
- [1.01520000e+01 5.86820000e+04 5.41920000e+01 ... 1.45640750e+00
-  5.14311000e-09 2.00000000e+00]
- [1.31202000e+02 4.91130000e+04 1.29330000e+02 ... 0.00000000e+00
-  0.00000000e+00 9.00000000e+00]
+ [1.01520000e+01 3.58720000e+04 1.95430000e+02 ... 1.45640513e+00
+  1.45640513e+00 2.00000000e+00]
+ [1.73194000e+02 8.00000000e+01 1.01520000e+01 ... 0.00000000e+00
+  0.00000000e+00 2.00000000e+00]
  ...
- [9.61600000e+01 4.43000000e+02 1.08000000e+01 ... 0.00000000e+00
+ [1.08000000e+01 3.78580000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+00]
+ [1.08000000e+01 5.37560000e+04 2.16580000e+02 ... 1.42904493e+00
+  1.42904487e+00 1.00000000e+00]
+ [1.08000000e+01 5.83090000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+00]], test: [[1.31202000e+02 6.03730000e+04 2.24000000e+02 ... 0.00000000e+00
+  0.00000000e+00 3.00000000e+00]
+ [1.08000000e+01 1.05730000e+04 1.98700000e+02 ... 0.00000000e+00
+  0.00000000e+00 4.00000000e+00]
+ [1.31202000e+02 5.04150000e+04 2.24000000e+02 ... 0.00000000e+00
+  0.00000000e+00 3.00000000e+00]
+ ...
+ [1.31202000e+02 4.45270000e+04 7.41250000e+01 ... 0.00000000e+00
   0.00000000e+00 9.00000000e+00]
- [1.29550000e+02 0.00000000e+00 9.60000000e-01 ... 1.43257411e+00
-  5.99801440e-08 3.00000000e+00]
- [1.31202000e+02 6.18000000e+03 1.31202000e+02 ... 0.00000000e+00
-  0.00000000e+00 8.00000000e+00]]
+ [1.00000000e+01 5.44530000e+04 1.95154000e+02 ... 1.45633078e+00
+  1.45633066e+00 1.00000000e+00]
+ [1.31202000e+02 4.97630000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+01]]
+train: [[1.08000000e+01 1.33510000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+00]
+ [1.01520000e+01 3.58720000e+04 1.95430000e+02 ... 1.45640513e+00
+  1.45640513e+00 2.00000000e+00]
+ [1.73194000e+02 8.00000000e+01 1.01520000e+01 ... 0.00000000e+00
+  0.00000000e+00 2.00000000e+00]
+ ...
+ [1.08000000e+01 3.78580000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+00]
+ [1.08000000e+01 5.37560000e+04 2.16580000e+02 ... 1.42904493e+00
+  1.42904487e+00 1.00000000e+00]
+ [1.08000000e+01 5.83090000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+00]], test: [[1.31202000e+02 6.03730000e+04 2.24000000e+02 ... 0.00000000e+00
+  0.00000000e+00 3.00000000e+00]
+ [1.08000000e+01 1.05730000e+04 1.98700000e+02 ... 0.00000000e+00
+  0.00000000e+00 4.00000000e+00]
+ [1.31202000e+02 5.04150000e+04 2.24000000e+02 ... 0.00000000e+00
+  0.00000000e+00 3.00000000e+00]
+ ...
+ [1.31202000e+02 4.45270000e+04 7.41250000e+01 ... 0.00000000e+00
+  0.00000000e+00 9.00000000e+00]
+ [1.00000000e+01 5.44530000e+04 1.95154000e+02 ... 1.45633078e+00
+  1.45633066e+00 1.00000000e+00]
+ [1.31202000e+02 4.97630000e+04 1.31202000e+02 ... 0.00000000e+00
+  0.00000000e+00 1.00000000e+01]]
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\kshitij\anaconda3\lib\site-packages\sklearn\utils\validation.py:68: FutureWarning: Pass shuffle=True, random_state=1 as keyword args. From version 0.25 passing these as positional arguments will result in an error
+  warnings.warn(&#34;Pass {} as keyword args. From version 0.25 &#34;
 </pre>
 </div>
 </div>
@@ -17371,7 +17446,7 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#FIRST I AM RUNNING WITHOUT HYPERPARAMETERE TUNING|</span>
@@ -17384,7 +17459,7 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[135]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Load libraries</span>
@@ -17403,7 +17478,7 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[136]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create adaboost classifer object</span>
@@ -17431,7 +17506,7 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>C:\Users\kshitij\anaconda3\lib\site-packages\sklearn\utils\validation.py:73: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
-  return f(**kwargs)
+  return inner_f
 </pre>
 </div>
 </div>
@@ -17442,7 +17517,7 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[137]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Model Accuracy, how often is the classifier correct?</span>
@@ -17463,7 +17538,7 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Accuracy: 0.9261792788941143
+<pre>Accuracy: 0.9412854496223457
 </pre>
 </div>
 </div>
@@ -17474,7 +17549,49 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_fscore_support</span> <span class="k">as</span> <span class="n">score</span>
+
+
+<span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">fscore</span><span class="p">,</span> <span class="n">support</span> <span class="o">=</span> <span class="n">score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precision: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precision</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recall: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recall</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fscore: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fscore</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;support: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">support</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>precision: [0.99971014 0.8477396  0.95241988 0.98638449]
+recall: [0.96936481 0.97531207 0.85235587 0.96482339]
+fscore: [0.98430365 0.90706224 0.8996139  0.97548482]
+support: [7116 7210 6834 6908]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#NOW I NEED TO DO HYPER PARAMATER TUNING OF ADABOOST</span>
@@ -17522,7 +17639,7 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>C:\Users\kshitij\anaconda3\lib\site-packages\sklearn\utils\validation.py:73: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
-  return f(**kwargs)
+  return inner_f
 </pre>
 </div>
 </div>
@@ -17533,16 +17650,16 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Best: 0.940079 using {&#39;learning_rate&#39;: 0.1, &#39;n_estimators&#39;: 100}
-0.780778 (0.106851) with: {&#39;learning_rate&#39;: 0.01, &#39;n_estimators&#39;: 10}
-0.896613 (0.003173) with: {&#39;learning_rate&#39;: 0.01, &#39;n_estimators&#39;: 50}
-0.904090 (0.002843) with: {&#39;learning_rate&#39;: 0.01, &#39;n_estimators&#39;: 100}
-0.853213 (0.026589) with: {&#39;learning_rate&#39;: 0.1, &#39;n_estimators&#39;: 10}
-0.922662 (0.003224) with: {&#39;learning_rate&#39;: 0.1, &#39;n_estimators&#39;: 50}
-0.940079 (0.004076) with: {&#39;learning_rate&#39;: 0.1, &#39;n_estimators&#39;: 100}
-0.930164 (0.004291) with: {&#39;learning_rate&#39;: 1.0, &#39;n_estimators&#39;: 10}
-0.922357 (0.018836) with: {&#39;learning_rate&#39;: 1.0, &#39;n_estimators&#39;: 50}
-0.917186 (0.014116) with: {&#39;learning_rate&#39;: 1.0, &#39;n_estimators&#39;: 100}
+<pre>Best: 0.939397 using {&#39;learning_rate&#39;: 0.1, &#39;n_estimators&#39;: 100}
+0.779332 (0.107586) with: {&#39;learning_rate&#39;: 0.01, &#39;n_estimators&#39;: 10}
+0.893117 (0.020288) with: {&#39;learning_rate&#39;: 0.01, &#39;n_estimators&#39;: 50}
+0.902695 (0.003832) with: {&#39;learning_rate&#39;: 0.01, &#39;n_estimators&#39;: 100}
+0.829613 (0.004779) with: {&#39;learning_rate&#39;: 0.1, &#39;n_estimators&#39;: 10}
+0.914432 (0.003579) with: {&#39;learning_rate&#39;: 0.1, &#39;n_estimators&#39;: 50}
+0.939397 (0.003410) with: {&#39;learning_rate&#39;: 0.1, &#39;n_estimators&#39;: 100}
+0.929091 (0.004071) with: {&#39;learning_rate&#39;: 1.0, &#39;n_estimators&#39;: 10}
+0.930144 (0.013602) with: {&#39;learning_rate&#39;: 1.0, &#39;n_estimators&#39;: 50}
+0.916509 (0.013749) with: {&#39;learning_rate&#39;: 1.0, &#39;n_estimators&#39;: 100}
 </pre>
 </div>
 </div>
@@ -17550,6 +17667,154 @@ train: [[1.98520000e+02 4.43000000e+02 1.00000000e+01 ... 1.43776581e+00
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_fscore_support</span> <span class="k">as</span> <span class="n">score</span>
+
+
+<span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">fscore</span><span class="p">,</span> <span class="n">support</span> <span class="o">=</span> <span class="n">score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precision: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">precision</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recall: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recall</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fscore: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fscore</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;support: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">support</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>precision: [0.99971014 0.8477396  0.95241988 0.98638449]
+recall: [0.96936481 0.97531207 0.85235587 0.96482339]
+fscore: [0.98430365 0.90706224 0.8996139  0.97548482]
+support: [7116 7210 6834 6908]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[141]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">df_con</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[142]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_con</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[142]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[6898,   22,  196,    0],
+       [   2, 7032,   94,   82],
+       [   0,  999, 5825,   10],
+       [   0,  242,    1, 6665]], dtype=int64)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[143]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="k">def</span> <span class="nf">plot_confusion_matrix</span><span class="p">(</span><span class="n">df_con</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Confusion matrix&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray_r</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">df_con</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span> <span class="c1"># imshow</span>
+    <span class="c1">#plt.title(title)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+
+
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">df_con</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="MADE-BY-KSHITIJ-DHYANI-18BIT0131">MADE BY KSHITIJ DHYANI 18BIT0131<a class="anchor-link" href="#MADE-BY-KSHITIJ-DHYANI-18BIT0131">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="THANKYOU">THANKYOU<a class="anchor-link" href="#THANKYOU">&#182;</a></h1>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
